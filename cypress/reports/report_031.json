@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:19:53.727Z",
+    "end": "2022-01-19T17:19:54.848Z",
+    "duration": 1121,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b0b1ce53-af0a-4781-9002-f467e7d1e9ac",
+      "title": "",
+      "fullFile": "cypress/integration/APItests/weatherapi.js",
+      "file": "cypress/integration/APItests/weatherapi.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71727991-ef56-412c-bffc-6c5d9ab72a9a",
+          "title": "check weather informaiton",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get weather ifnormation for cities",
+              "fullTitle": "check weather informaiton get weather ifnormation for cities",
+              "timedOut": null,
+              "duration": 238,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//1st request: GET locations \ncy.request({\n  method: 'GET',\n  url: 'https://www.metaweather.com/api/location/search/?query=San'\n}).then(resp => {\n  const city = resp.body[0].title;\n  return city;\n}).then(city => {\n  //2nd request for the first location/city\n  cy.request({\n    method: 'GET',\n    url: 'https://www.metaweather.com/api/location/search/?query=' + city\n  }).then(resp => {\n    expect(resp.status).to.eq(200);\n    expect(resp.body[0]).to.have.property('title', city);\n  });\n});",
+              "err": {},
+              "uuid": "1f633492-aa1f-4940-9303-9c683c22ab93",
+              "parentUUID": "71727991-ef56-412c-bffc-6c5d9ab72a9a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "get weather information for all cities",
+              "fullTitle": "check weather informaiton get weather information for all cities",
+              "timedOut": null,
+              "duration": 820,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//1st request: GET locations \ncy.request({\n  method: 'GET',\n  url: 'https://www.metaweather.com/api/location/search/?query=San'\n}).then(resp => {\n  const location = resp.body;\n  return location;\n}).then(location => {\n  for (let i = 0; i < location.length; i++) {\n    //2nd request for the first location/city\n    cy.request({\n      method: 'GET',\n      url: 'https://www.metaweather.com/api/location/search/?query=' + location[i].title\n    }).then(resp => {\n      expect(resp.status).to.eq(200);\n      expect(resp.body[0]).to.have.property('title', location[i].title);\n    });\n  }\n});",
+              "err": {},
+              "uuid": "fc88bedb-06ea-44a5-b4a7-f79821028e24",
+              "parentUUID": "71727991-ef56-412c-bffc-6c5d9ab72a9a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1f633492-aa1f-4940-9303-9c683c22ab93",
+            "fc88bedb-06ea-44a5-b4a7-f79821028e24"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1058,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

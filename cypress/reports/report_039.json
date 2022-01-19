@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:21:46.959Z",
+    "end": "2022-01-19T17:21:57.408Z",
+    "duration": 10449,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "82cca4dd-260b-4ac4-b049-9496bd81e9df",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/element_get.js",
+      "file": "cypress/integration/mytests/element_get.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de8b1dae-c37e-4756-adce-45b998bb1fee",
+          "title": "check element get concept",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "element get testing",
+              "fullTitle": "check element get concept element get testing",
+              "timedOut": null,
+              "duration": 8604,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.freshworks.com/');\ncy.get('#onetrust-accept-btn-handler').click();\ncy.contains('Platform').click(); //cy.url().should('include', '/platform')\n//cy.get('div.align-center.mb-lg h1:nth-of-type(2)')\ncy.get('div.align-center.mb-lg a:nth-of-type(1)').should('be.visible') //.and('contain', 'Our platform')\n.and('contain', 'See life at freshworks').and('have.length', 1);\ncy.get('ul.footer-nav li').should('have.length', 23);\ncy.get('ul.footer-nav li').find(\"a[href*='footer']\").should('have.length', 5);",
+              "err": {},
+              "uuid": "d4bbe616-8196-450d-9365-1f707b4c183e",
+              "parentUUID": "de8b1dae-c37e-4756-adce-45b998bb1fee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d4bbe616-8196-450d-9365-1f707b4c183e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8604,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

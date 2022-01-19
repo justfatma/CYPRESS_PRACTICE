@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:19:33.211Z",
+    "end": "2022-01-19T17:19:34.739Z",
+    "duration": 1528,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f05e993e-a906-43bc-9f73-bc24d42965c0",
+      "title": "",
+      "fullFile": "cypress/integration/APItests/get_api_test_alias.js",
+      "file": "cypress/integration/APItests/get_api_test_alias.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7ea066c4-7f36-4ae3-983e-ad868cc46ea1",
+          "title": "API testing with alias",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "validate the header info",
+              "fullTitle": "API testing with alias validate the header info",
+              "timedOut": null,
+              "duration": 400,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@posts').its('headers').its('content-type').should('include', 'application/json; charset=utf-8');",
+              "err": {},
+              "uuid": "02192997-7ad6-4c73-848c-54da1983802f",
+              "parentUUID": "7ea066c4-7f36-4ae3-983e-ad868cc46ea1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validate the status code",
+              "fullTitle": "API testing with alias validate the status code",
+              "timedOut": null,
+              "duration": 346,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@posts').its('status').should('equal', 200);",
+              "err": {},
+              "uuid": "96290217-9dc5-44e0-92d8-db57739c8aa3",
+              "parentUUID": "7ea066c4-7f36-4ae3-983e-ad868cc46ea1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validate the total pages in the body",
+              "fullTitle": "API testing with alias validate the total pages in the body",
+              "timedOut": null,
+              "duration": 368,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@posts').its('body').then(res => {\n  expect(res.meta.pagination).has.property('pages', 70);\n});",
+              "err": {},
+              "uuid": "38956c0b-d976-4fdd-a804-728a7bf86d6b",
+              "parentUUID": "7ea066c4-7f36-4ae3-983e-ad868cc46ea1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validate the user info in data json array",
+              "fullTitle": "API testing with alias validate the user info in data json array",
+              "timedOut": null,
+              "duration": 367,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@posts').its('body').then(res => {\n  expect(res.data[0]).has.property('id', 22);\n});",
+              "err": {},
+              "uuid": "1c93bbdb-48c7-4873-8323-ab8e152df2fe",
+              "parentUUID": "7ea066c4-7f36-4ae3-983e-ad868cc46ea1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "02192997-7ad6-4c73-848c-54da1983802f",
+            "96290217-9dc5-44e0-92d8-db57739c8aa3",
+            "38956c0b-d976-4fdd-a804-728a7bf86d6b",
+            "1c93bbdb-48c7-4873-8323-ab8e152df2fe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1481,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

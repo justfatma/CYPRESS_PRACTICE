@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-01-19T17:19:50.991Z",
+    "end": "2022-01-19T17:19:52.090Z",
+    "duration": 1099,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "63ab2e8d-bfb1-48bb-9567-48d09cbecf13",
+      "title": "",
+      "fullFile": "cypress/integration/APItests/PutUser.js",
+      "file": "cypress/integration/APItests/PutUser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ba41d10d-faf4-4e1a-9515-6dbb06bc479c",
+          "title": "post user request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create user test",
+              "fullTitle": "post user request create user test",
+              "timedOut": null,
+              "duration": 1027,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//var pattern = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"\n//for (var i = 0; i < 10; i++)\n//randomText+=pattern.charAt(Math.floor(Math.random() * pattern.length));\n//testEmail = randomText + '@gmail.com'\n//1. create user (POST)\ncy.request({\n  method: 'POST',\n  url: 'https://gorest.co.in/public/v1/users',\n  headers: {\n    'Authorization': 'Bearer ' + accessToken\n  },\n  body: {\n    \"name\": \"Test Automation Cypress\",\n    \"gender\": \"male\",\n    \"email\": \"naveencypress11@gmail.com\",\n    \"status\": \"active\"\n  }\n}).then(res => {\n  cy.log(JSON.stringify(res));\n  expect(res.status).to.eq(201);\n  expect(res.body.data).has.property('email', 'naveencypress11@gmail.com');\n  expect(res.body.data).has.property('name', 'Test Automation Cypress');\n  expect(res.body.data).has.property('status', 'active');\n  expect(res.body.data).has.property('gender', 'male');\n}).then(res => {\n  const userId = res.body.data.id;\n  cy.log(\"user id is: \" + userId); //2. update user (PUT)\n  cy.request({\n    method: 'PUT',\n    url: 'https://gorest.co.in/public/v1/users/' + userId,\n    headers: {\n      'Authorization': 'Bearer ' + accessToken\n    },\n    body: {\n      \"name\": \"Test Automation Cypress Updated\",\n      \"gender\": \"male\",\n      \"email\": \"naveencypressupdated11@gmail.com\",\n      \"status\": \"inactive\"\n    }\n  }).then(res => {\n    expect(res.status).to.eq(200);\n    expect(res.body.data).has.property('email', 'naveencypressupdated11@gmail.com');\n    expect(res.body.data).has.property('name', 'Test Automation Cypress Updated');\n    expect(res.body.data).has.property('status', 'inactive');\n    expect(res.body.data).has.property('gender', 'male');\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://gorest.co.in/public/v1/users/3409\n\nThe response we received from your web server was:\n\n  > 422: Unprocessable Entity\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://gorest.co.in/public/v1/users/3409\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer 007526d9efdbc07e084ff7a6d4cfcc90588fbe20641c00faebf45a7f3b2eaf33\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.1.1 Chrome/94.0.4606.81 Electron/15.2.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 121\n}\nBody: {\"name\":\"Test Automation Cypress Updated\",\"gender\":\"male\",\"email\":\"naveencypressupdated11@gmail.com\",\"status\":\"inactive\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 422 - Unprocessable Entity\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Wed, 19 Jan 2022 17:19:51 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-download-options\": \"noopen\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"cache-control\": \"no-cache\",\n  \"x-request-id\": \"1294c6ea-8a37-4d26-b439-0acf3087545e\",\n  \"x-runtime\": \"0.013529\",\n  \"strict-transport-security\": \"max-age=63072000; includeSubDomains\",\n  \"vary\": \"Origin\"\n}\nBody: {\n  \"meta\": null,\n  \"data\": [\n    {\n      \"field\": \"email\",\n      \"message\": \"has already been taken\"\n    }\n  ]\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://gorest.co.in/public/v1/users/3409\n\nThe response we received from your web server was:\n\n  > 422: Unprocessable Entity\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://gorest.co.in/public/v1/users/3409\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer 007526d9efdbc07e084ff7a6d4cfcc90588fbe20641c00faebf45a7f3b2eaf33\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.1.1 Chrome/94.0.4606.81 Electron/15.2.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 121\n}\nBody: {\"name\":\"Test Automation Cypress Updated\",\"gender\":\"male\",\"email\":\"naveencypressupdated11@gmail.com\",\"status\":\"inactive\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 422 - Unprocessable Entity\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Wed, 19 Jan 2022 17:19:51 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-download-options\": \"noopen\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"cache-control\": \"no-cache\",\n  \"x-request-id\": \"1294c6ea-8a37-4d26-b439-0acf3087545e\",\n  \"x-runtime\": \"0.013529\",\n  \"strict-transport-security\": \"max-age=63072000; includeSubDomains\",\n  \"vary\": \"Origin\"\n}\nBody: {\n  \"meta\": null,\n  \"data\": [\n    {\n      \"field\": \"email\",\n      \"message\": \"has already been taken\"\n    }\n  ]\n}\n\n\nhttps://on.cypress.io/request\n    at https://gorest.co.in/__cypress/runner/cypress_runner.js:159402:80\n    at tryCatcher (https://gorest.co.in/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (https://gorest.co.in/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (https://gorest.co.in/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (https://gorest.co.in/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (https://gorest.co.in/__cypress/runner/cypress_runner.js:11313:18)\n    at _drainQueueStep (https://gorest.co.in/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (https://gorest.co.in/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://gorest.co.in/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (https://gorest.co.in/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at Context.eval (https://gorest.co.in/__cypress/tests?p=cypress\\integration\\APItests\\PutUser.js:129:7)",
+                "diff": null
+              },
+              "uuid": "ae47a1b7-162c-4df7-bf09-3705802682da",
+              "parentUUID": "ba41d10d-faf4-4e1a-9515-6dbb06bc479c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ae47a1b7-162c-4df7-bf09-3705802682da"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1027,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:20:18.106Z",
+    "end": "2022-01-19T17:20:31.015Z",
+    "duration": 12909,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "006acd22-ba21-411c-baeb-aaed036f36b4",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/automationprac_login_test.js",
+      "file": "cypress/integration/mytests/automationprac_login_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee3259dd-313f-4e1f-bf00-7cf8aaab3967",
+          "title": "hub spot page feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "handle hub spot login test",
+              "fullTitle": "hub spot page feature handle hub spot login test",
+              "timedOut": null,
+              "duration": 8743,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/', {\n  failOnStatusCode: false\n});\ncy.get('.login').click();\ncy.get('#email').type('practice.fatma@gmail.com');\ncy.get('#passwd').type('practice1901');\ncy.get('#SubmitLogin').click();",
+              "err": {},
+              "uuid": "aff76d81-a092-47a4-b9bd-9ef674474713",
+              "parentUUID": "ee3259dd-313f-4e1f-bf00-7cf8aaab3967",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aff76d81-a092-47a4-b9bd-9ef674474713"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8743,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

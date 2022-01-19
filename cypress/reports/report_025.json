@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:19:29.655Z",
+    "end": "2022-01-19T17:19:31.805Z",
+    "duration": 2150,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1abe8202-920b-4212-8dc4-8bb6f9375bb6",
+      "title": "",
+      "fullFile": "cypress/integration/APItests/DeleteUser.js",
+      "file": "cypress/integration/APItests/DeleteUser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6919fe8b-65bb-4a2f-817e-8180a21da268",
+          "title": "Delete user request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create user test",
+              "fullTitle": "Delete user request create user test",
+              "timedOut": null,
+              "duration": 2129,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//1. create user (POST)\ncy.request({\n  method: 'POST',\n  url: 'https://gorest.co.in/public/v1/users',\n  headers: {\n    'Authorization': 'Bearer ' + accessToken\n  },\n  body: {\n    \"name\": \"Test Automation Cypress User\",\n    \"gender\": \"male\",\n    \"email\": \"naveenCypressuser@gmail.com\",\n    \"status\": \"active\"\n  }\n}).then(res => {\n  cy.log(JSON.stringify(res));\n  expect(res.status).to.eq(201);\n  expect(res.body.data).has.property('email', 'naveenCypressuser@gmail.com');\n  expect(res.body.data).has.property('name', 'Test Automation Cypress User');\n}).then(res => {\n  const userId = res.body.data.id;\n  cy.log(\"user id is: \" + userId); //2. delete user (DELETE)\n  cy.request({\n    method: 'DELETE',\n    url: 'https://gorest.co.in/public/v1/users/' + userId,\n    headers: {\n      'Authorization': 'Bearer ' + accessToken\n    }\n  }).then(res => {\n    expect(res.status).to.eq(204);\n  });\n});",
+              "err": {},
+              "uuid": "009a1863-21f8-4055-95fe-23cebfb4ce49",
+              "parentUUID": "6919fe8b-65bb-4a2f-817e-8180a21da268",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "009a1863-21f8-4055-95fe-23cebfb4ce49"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2129,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

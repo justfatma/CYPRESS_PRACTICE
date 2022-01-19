@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 2,
+    "failures": -2,
+    "start": "2022-01-19T17:21:30.948Z",
+    "end": "2022-01-19T17:21:44.751Z",
+    "duration": 13803,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 66.66666666666666,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "377a83fe-15ca-4b46-b7cf-1bf528d58fbf",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/dropdown_test.js",
+      "file": "cypress/integration/mytests/dropdown_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "222d220f-0844-491e-bcfa-223829cce5be",
+          "title": "drop down feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "with Select tag test",
+              "fullTitle": "drop down feature with Select tag test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "9ff36e91-a50e-4675-87ba-a9e2639a6cfc",
+              "parentUUID": "222d220f-0844-491e-bcfa-223829cce5be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Google Search Test",
+              "fullTitle": "drop down feature Google Search Test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "324c2ced-db9b-4cfb-9b07-1154b6af618d",
+              "parentUUID": "222d220f-0844-491e-bcfa-223829cce5be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "automation Ecomm Search Test",
+              "fullTitle": "drop down feature automation Ecomm Search Test",
+              "timedOut": null,
+              "duration": 10397,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php');\ncy.get('#search_query_top').type('dress');\ncy.wait(2000);\ncy.get('.ac_results').find('li').contains('T-shirts').click();\ncy.wait(2000);",
+              "err": {},
+              "uuid": "9a740857-920a-4996-96fa-6d8ad5114dd6",
+              "parentUUID": "222d220f-0844-491e-bcfa-223829cce5be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a740857-920a-4996-96fa-6d8ad5114dd6"
+          ],
+          "failures": [],
+          "pending": [
+            "9ff36e91-a50e-4675-87ba-a9e2639a6cfc",
+            "324c2ced-db9b-4cfb-9b07-1154b6af618d"
+          ],
+          "skipped": [],
+          "duration": 10397,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:21:08.102Z",
+    "end": "2022-01-19T17:21:28.723Z",
+    "duration": 20621,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ee8fcc68-80ae-44eb-a49a-ed789accfa60",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/checkbox_test.js",
+      "file": "cypress/integration/mytests/checkbox_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61d43161-c9ea-4c96-871b-7d86a83731e4",
+          "title": "Category page tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SnapDeal Page - filter checkbox test",
+              "fullTitle": "Category page tests SnapDeal Page - filter checkbox test",
+              "timedOut": null,
+              "duration": 18429,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.snapdeal.com/');\ncy.get('#inputValEnter').type('Laptop');\ncy.contains('Search').click(); //check\ncy.get('[data-displayname=\"Brand\"] > .filter-content > .filter-inner > :nth-child(n) > input').check({\n  force: true\n}); //assertion\ncy.get('[data-displayname=\"Brand\"] > .filter-content > .filter-inner > :nth-child(n) > input').should('have.checked', 'checked'); //unchecked\ncy.get('[data-displayname=\"Brand\"] > .filter-content > .filter-inner > :nth-child(n) > input').uncheck({\n  force: true\n}); //assertion\ncy.get('[data-displayname=\"Brand\"] > .filter-content > .filter-inner > :nth-child(n) > input').should('not.have.checked', 'checked');",
+              "err": {},
+              "uuid": "a3b86b0d-b75a-4cfe-9e7a-83eee9b822ec",
+              "parentUUID": "61d43161-c9ea-4c96-871b-7d86a83731e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a3b86b0d-b75a-4cfe-9e7a-83eee9b822ec"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18429,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

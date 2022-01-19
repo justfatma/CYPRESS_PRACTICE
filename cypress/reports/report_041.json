@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:22:10.045Z",
+    "end": "2022-01-19T17:22:39.871Z",
+    "duration": 29826,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "681f214a-e74f-455f-8688-a21f5103ea13",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/file_upload_test.js",
+      "file": "cypress/integration/mytests/file_upload_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc70d868-410f-4a7b-8e36-f7db37e14c14",
+          "title": "file upload use cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "simple file upload",
+              "fullTitle": "file upload use cases simple file upload",
+              "timedOut": null,
+              "duration": 5122,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php?controller=contact');\nconst yourFixturePath = 'image1.jpeg';\ncy.get('#fileUpload').attachFile(yourFixturePath);\ncy.wait(2000);",
+              "err": {},
+              "uuid": "f5389968-eb69-40d2-9ed4-6bf8e8227848",
+              "parentUUID": "dc70d868-410f-4a7b-8e36-f7db37e14c14",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drag and drop file upload",
+              "fullTitle": "file upload use cases drag and drop file upload",
+              "timedOut": null,
+              "duration": 5155,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://css-tricks.com/examples/DragAndDropFileUploading/');\nconst yourFixturePath = 'image1.jpeg';\ncy.get('#file').attachFile(yourFixturePath);\ncy.wait(2000);\ncy.get('.box__success').should('contain.text', 'Done!');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "2f917f72-5b2d-4edc-97bf-e0e4e1da25a0",
+              "parentUUID": "dc70d868-410f-4a7b-8e36-f7db37e14c14",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "multiple files upload",
+              "fullTitle": "file upload use cases multiple files upload",
+              "timedOut": null,
+              "duration": 6895,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://davidwalsh.name/demo/multiple-file-upload.php');\nconst yourFixturePath = 'image1.jpeg';\nconst yourFixturePath1 = 'upload.txt';\nconst yourFixturePath2 = 'example.json';\ncy.get('#filesToUpload').attachFile(yourFixturePath).attachFile(yourFixturePath1).attachFile(yourFixturePath2);\ncy.wait(2000);\ncy.get('p:nth-child(6) > strong').should('contain.text', 'Files You Selected:');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "30e4e47d-ade4-4120-8974-98b6d57f3a13",
+              "parentUUID": "dc70d868-410f-4a7b-8e36-f7db37e14c14",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "change file name while uploading",
+              "fullTitle": "file upload use cases change file name while uploading",
+              "timedOut": null,
+              "duration": 6017,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://davidwalsh.name/demo/multiple-file-upload.php');\nconst yourFixturePath = 'image1.jpeg';\ncy.get('#filesToUpload').attachFile({\n  filePath: yourFixturePath,\n  fileName: 'users.json'\n});\ncy.wait(2000);\ncy.get('p:nth-child(6) > strong').should('contain.text', 'Files You Selected:');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "49375a6e-8693-464c-8f97-ea2675831387",
+              "parentUUID": "dc70d868-410f-4a7b-8e36-f7db37e14c14",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f5389968-eb69-40d2-9ed4-6bf8e8227848",
+            "2f917f72-5b2d-4edc-97bf-e0e4e1da25a0",
+            "30e4e47d-ade4-4120-8974-98b6d57f3a13",
+            "49375a6e-8693-464c-8f97-ea2675831387"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23189,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

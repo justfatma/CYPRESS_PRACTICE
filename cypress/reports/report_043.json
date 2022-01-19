@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 2,
+    "failures": -2,
+    "start": "2022-01-19T17:22:55.625Z",
+    "end": "2022-01-19T17:23:12.838Z",
+    "duration": 17213,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 66.66666666666666,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c5a439ab-a7c5-44bb-864e-fb822dc3aeff",
+      "title": "",
+      "fullFile": "cypress/integration/mytests/mouse_over_test.js",
+      "file": "cypress/integration/mytests/mouse_over_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9394c833-1f75-45f3-b985-2dd63445b3be",
+          "title": "mouse over feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "click on sign up Link Test",
+              "fullTitle": "mouse over feature click on sign up Link Test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "45eecc6b-e3fe-4e8d-a1a3-7630ac31549d",
+              "parentUUID": "9394c833-1f75-45f3-b985-2dd63445b3be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "click on Member Login Link Test",
+              "fullTitle": "mouse over feature click on Member Login Link Test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "a866fd20-f49d-432b-8d70-57a340a4f9d0",
+              "parentUUID": "9394c833-1f75-45f3-b985-2dd63445b3be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add to Chart Test",
+              "fullTitle": "mouse over feature Add to Chart Test",
+              "timedOut": null,
+              "duration": 14363,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php');\ncy.get('.ajax_add_to_cart_button').first().click();\ncy.wait(2000);\ncy.get('.cross').click();\ncy.wait(2000);\ncy.get('.cart_block').should('be.hidden').invoke('show');\ncy.wait(2000);\ncy.get('#button_order_cart').click();\ncy.url().should('include', 'controller=order');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "4bbb1923-a90d-4cfb-9c01-9001476167b4",
+              "parentUUID": "9394c833-1f75-45f3-b985-2dd63445b3be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4bbb1923-a90d-4cfb-9c01-9001476167b4"
+          ],
+          "failures": [],
+          "pending": [
+            "45eecc6b-e3fe-4e8d-a1a3-7630ac31549d",
+            "a866fd20-f49d-432b-8d70-57a340a4f9d0"
+          ],
+          "skipped": [],
+          "duration": 14363,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

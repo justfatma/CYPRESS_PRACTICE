@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-19T17:19:36.474Z",
+    "end": "2022-01-19T17:19:44.976Z",
+    "duration": 8502,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4e466363-eed3-4516-a324-4f7f61189124",
+      "title": "",
+      "fullFile": "cypress/integration/APItests/get_api_test.js",
+      "file": "cypress/integration/APItests/get_api_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "39630c8a-5136-4d18-bf3d-aea25a223e78",
+          "title": "GET API for Rest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET API Test for Flask - Motorbike",
+              "fullTitle": "GET API for Rest GET API Test for Flask - Motorbike",
+              "timedOut": null,
+              "duration": 7381,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'https://flask-rest-api-demo.herokuapp.com/product/motorbike').then(res => {\n  expect(res.status).equal(200);\n  expect(res.body.product[0]).has.property('price', 599.99);\n  expect(res.body.product[0]).has.property('product', 'motorbike');\n});",
+              "err": {},
+              "uuid": "cc308ad8-e00d-481e-8a9c-aa958e370c3e",
+              "parentUUID": "39630c8a-5136-4d18-bf3d-aea25a223e78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET API Test for Flask - users",
+              "fullTitle": "GET API for Rest GET API Test for Flask - users",
+              "timedOut": null,
+              "duration": 87,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'https://flask-rest-api-demo.herokuapp.com/users').then(res => {\n  expect(res.status).equal(200);\n  expect(res.body.users[0]).has.property('username', 'test_1');\n  expect(res.body.users[1]).has.property('id', 2);\n  expect(res.body.users).has.length(5);\n  expect(res.body.users[0]).not.have.property('price');\n});",
+              "err": {},
+              "uuid": "967982a7-ce08-4401-891a-4d336520017d",
+              "parentUUID": "39630c8a-5136-4d18-bf3d-aea25a223e78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET API Test for Go Res API - Users",
+              "fullTitle": "GET API for Rest GET API Test for Go Res API - Users",
+              "timedOut": null,
+              "duration": 998,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'https://gorest.co.in/public/v1/posts').then(res => {\n  expect(res.status).equal(200);\n  expect(res.body.data[0]).has.property('id', 22);\n  expect(res.body.data[1]).has.property('title', 'c');\n  expect(res.body.data).has.length(20);\n});",
+              "err": {},
+              "uuid": "72547456-4f4e-4f84-80f4-15ea946c3841",
+              "parentUUID": "39630c8a-5136-4d18-bf3d-aea25a223e78",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cc308ad8-e00d-481e-8a9c-aa958e370c3e",
+            "967982a7-ce08-4401-891a-4d336520017d",
+            "72547456-4f4e-4f84-80f4-15ea946c3841"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8466,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

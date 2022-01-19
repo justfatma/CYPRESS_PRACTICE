@@ -1,0 +1,2 @@
+
+The file you want to upload, should be under fixtures folder.
